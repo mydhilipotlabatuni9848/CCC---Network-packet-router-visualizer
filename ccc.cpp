@@ -49,7 +49,7 @@ public:
 
         dist[src] = 0;
 
-        cout << "\n🚀 Starting Packet Routing Simulation...\n";
+        cout << "\n Starting Packet Routing Simulation...\n";
 
         for (int i = 0; i < V - 1; i++) {
             int u = -1;
@@ -62,7 +62,7 @@ public:
 
             visited[u] = true;
 
-            cout << "\n📍 Visiting Node: " << u << endl;
+            cout << "\n Visiting Node: " << u << endl;
             this_thread::sleep_for(chrono::milliseconds(800));
 
             for (auto &it : adj[u]) {
@@ -83,12 +83,12 @@ public:
             }
         }
 
-        cout << "\n✅ Final Shortest Distances:\n";
+        cout << "\n Final Shortest Distances:\n";
         for (int i = 0; i < V; i++) {
             cout << "Node " << i << " → " << dist[i] << endl;
         }
 
-        cout << "\n📡 Packet Routes from Source:\n";
+        cout << "\n Packet Routes from Source:\n";
         for (int i = 0; i < V; i++) {
             cout << "To Node " << i << ": ";
             printPath(parent, i);
